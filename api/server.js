@@ -1,5 +1,19 @@
+require("dotenv").config();
+
+
 const express = require('express');
+const projectsRouter = require('./projects/projects-router');
+const actionsRouter = require('./actions/actions-router');
 const server = express();
+
+//Express
+server.use(express.json())
+
+//Middleware
+
+//Router
+server.use('/api/projects',projectsRouter)
+server.use('/api/actions',actionsRouter)
 
 // Configure your server here
 // Build your actions router in /api/actions/actions-router.js
